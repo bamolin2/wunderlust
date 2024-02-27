@@ -67,7 +67,7 @@ table {
     --black: #000;
 }
 
-/* ---------- CUSTOM STYLES BEGIN ---------- */
+/* ---------- SMALL SCREEN CUSTOM STYLES BEGIN ---------- */
 
 * {
     box-sizing: border-box;
@@ -119,7 +119,7 @@ h4, p, q, small, nav, button, form {
 /* ----- HEADER STYLES ----- */
 header {
     width: 100%;
-    background-color: var(--teal);
+    background-image: linear-gradient(var(--teal) 30%, var(--white));
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -520,3 +520,291 @@ footer a, footer p {
     font-weight: 300;
     color: var(--dark-gray);
 }
+
+/*----------- END SMALL SCREEN STYLES ------------*/
+
+/*----------- BEGIN MEDIUM SCREEN STYLES ------------*/
+
+@media screen and (min-width: 700px){
+/* ----- HEADER SECTION ----- */
+    header {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 2rem 0 2rem 0;
+        align-items: center;
+        
+      }
+
+    #menu-toggle input, #menu-toggle label {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    #menu-toggle,  #menu-toggle ul{
+        position: static;
+        height: fit-content;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    #toggle:not(:checked) + label + ul {
+        display: flex;
+        position: static;
+        column-gap: 5px;
+        padding: 0 1rem;
+    }
+
+    #logo {
+        width: 100%;
+        grid-column: 1 / 2;
+        grid-row: 1 / span 2;
+    }
+
+    #logo img {
+        padding: 10px;
+        width: 100%;
+    }
+    
+    h1{
+        grid-column: 2 / -1;
+        font-size: 2.75rem;
+        padding: 0;
+        width: fit-content;
+    }
+    
+    nav {
+        padding: 0;
+        grid-column: 1 / -1;
+        grid-row: 3;
+        width: fit-content;
+    }
+
+    nav ul li {
+        background-color: var(--white);
+        margin: 0;
+        width: 100%;
+        padding: 1rem;
+        border: 0;
+    }
+
+    nav ul li:hover {
+        background-color: var(--yellow);
+    }
+
+    nav ul li a{
+        text-decoration: none;
+        color: var(--black);
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 0;
+    }
+
+    header p {
+        grid-column: 2/ -1;
+        line-height: 1.5rem;
+        font-size: 1.2rem;
+        padding: 1rem 1rem 1rem 0;
+        width: fit-content;
+    }
+
+    /* ----- INTRO SECTION ----- */
+
+    #intro {
+        justify-items: center;
+    }
+
+    #img-grid {
+        width: 70%;
+        padding: 0 2rem;
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        justify-items: center;
+    }
+    
+    #img-grid img, picture img{
+        width: 100%;
+    }
+
+    picture{
+        grid-row: 2;
+        grid-column: 1 / -1;
+
+    }
+
+    /* ----- PLAN SECTION ----- */
+
+    #plan div {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    /* ----- TESTIMONIALS SECTION ----- */
+
+    #testimonials div {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    #testimonials {
+        padding-bottom: 1rem;
+    }
+
+    /* ----- ABOUT SECTION ----- */
+
+    #about div {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+    }
+
+    /* ----- CONTACT SECTION ----- */
+
+    #mySubmit {
+        width: fit-content;
+        padding: 1rem 4rem;
+        align-self: flex-end;
+    }
+
+    /* ----- FOOTER SECTION ----- */
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+/*----------- END MEDIUM SCREEN STYLES ------------*/
+
+/*----------- BEGIN LARGE SCREEN STYLES ------------*/
+
+@media screen and (min-width: 1200px){
+
+    /* ----- HEADER SECTION ----- */
+
+   header {
+        grid-template-columns: 1fr 2fr 3fr;
+        padding: 0 0 2rem 0;
+        align-items: center;
+      }
+
+
+    #logo {
+        width: 100%;
+        grid-column: 1 / 2;
+        grid-row: 1 / span 3;
+    }
+
+    #logo img {
+        padding: 10px;
+        width: 100%;
+    }
+    
+
+    #toggle:not(:checked) + label + ul {
+        width: 100%;
+        padding: 0;
+    }
+    
+    nav {
+        padding: 0;
+        grid-column: 3 / -1;
+        grid-row: 1;
+        width: 100%;
+    }
+
+    nav ul li {
+        padding: .5rem;
+        
+    }
+
+    #menu-toggle {
+        width: 100%;
+    }
+
+    /* ----- INTRO SECTION ----- */
+
+    #intro {
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 1fr 3fr;
+    }
+
+    #intro p {
+        grid-column: 1 / 2;
+        grid-row: 2;
+    }
+
+    #img-grid {
+        grid-column: 2 / -1;
+        grid-row: 1 / -1;
+        width: 100%;
+    }
+
+    #intro h2 {
+        grid-column: 1 / 2;
+        grid-row: 1;
+    }
+
+    /* ----- PLAN SECTION ----- */
+
+    #plan div {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        padding: 2rem;
+    }
+
+    /* ----- TESTIMONIALS SECTION ----- */
+
+    #testimonials div {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    #testimonials {
+        padding-bottom: 1rem;
+    }
+
+    /* ----- ABOUT SECTION ----- */
+
+    #about h3{
+        align-self: flex-start;
+    }
+
+    #about {
+        align-items: center;
+    }
+
+    /* ----- CONTACT SECTION ----- */
+
+    form {
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 0;
+        padding: 1.5rem;
+        column-gap: 10px;
+    }
+
+    form div {
+        width: 80%;
+    }
+
+    /* ----- FOOTER SECTION ----- */
+
+    footer {
+        margin: 0;
+        height: fit-content;
+        justify-content: flex-end;
+        position: relative;
+    }
+
+    footer p{
+        position: absolute;
+        left: 1rem;
+    }
+}
+
+/*----------- END LARGE SCREEN STYLES ------------*/
